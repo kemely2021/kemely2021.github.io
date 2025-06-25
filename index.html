@@ -3,75 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kemely – Portafolio</title>
+  <title>Kemely Castillo – Portafolio</title>
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
-    /* Texto en gradiente animado */
-    .glow{
-      background:linear-gradient(90deg,#ff6ec4,#7873f5,#48c6ef);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:glowMove 8s linear infinite;
-      background-size:200% 200%;
-    }
+    .glow{background:linear-gradient(90deg,#ff6ec4,#7873f5,#48c6ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:glowMove 8s linear infinite;background-size:200% 200%}
     @keyframes glowMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .card-overlay{transition:opacity .3s ease,transform .3s ease}
-    .group:hover .card-overlay{opacity:1;transform:translateY(0)}
+    .card-overlay{transition:opacity .3s ease,transform .3s ease}.group:hover .card-overlay{opacity:1;transform:translateY(0)}
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans antialiased scroll-smooth">
   <!-- NAVBAR -->
-  <nav class="fixed top-0 inset-x-0 backdrop-blur-md bg-gray-900/70 border-b border-gray-800 z-50">
+  <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-gray-900/70 border-b border-gray-800">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="font-semibold text-lg glow">kemely</a>
       <ul class="hidden sm:flex space-x-6 text-sm uppercase tracking-wide">
         <li><a href="#projects" class="hover:text-indigo-400">Proyectos</a></li>
         <li><a href="#about" class="hover:text-indigo-400">Sobre mí</a></li>
+        <li><a href="#skills" class="hover:text-indigo-400">Habilidades</a></li>
+        <li><a href="#certs" class="hover:text-indigo-400">Certificaciones</a></li>
         <li><a href="https://github.com/kemely2021" target="_blank" class="hover:text-indigo-400">GitHub</a></li>
-        <li><a href="mailto:kemely2021@example.com" class="hover:text-indigo-400">Contacto</a></li>
+        <li><a href="mailto:kemelyfrancis@gmail.com" class="hover:text-indigo-400">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
   <header id="home" class="pt-32 pb-24 text-center px-4">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight glow">Hola, soy Kemely Castillo</h1>
-    <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-300">Desarrolladora de Ciencia de Datos y estudiante de Computación. Construyo aplicaciones y visualizaciones que combinan diseño limpio con datos significativos.</p>
-    <a href="#projects" class="inline-block mt-10 px-6 py-3 bg-indigo-500 hover:bg-indigo-600 rounded-lg font-medium transition">Ver proyectos</a>
+    <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight glow">Kemely Castillo</h1>
+    <p class="mt-4 text-lg text-gray-300 max-w-xl mx-auto">Estudiante de último año de <strong>Ciencia de la Computación</strong> en la UNSA • Apasionada por los <em>datos</em>, el <em>diseño</em> y las <em>soluciones que cuentan historias</em>.</p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#projects" class="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 rounded-lg font-medium transition">Ver proyectos</a>
+      <a href="mailto:kemelyfrancis@gmail.com" class="px-6 py-3 border border-indigo-400 hover:bg-indigo-400 hover:text-gray-900 rounded-lg font-medium transition">Trabajemos juntos</a>
+    </div>
   </header>
 
   <!-- PROJECTS -->
   <main id="projects" class="max-w-6xl mx-auto px-4 py-20">
-    <h2 class="text-3xl font-bold mb-12 glow">Proyectos</h2>
+    <h2 class="text-3xl font-bold mb-12 glow">Proyectos Destacados</h2>
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       <!-- JuegaABC -->
       <a href="https://github.com/kemely2018/JuegaABC" target="_blank" rel="noopener" class="group block rounded-lg overflow-hidden shadow-lg hover:shadow-2xl bg-gray-800">
         <img src="https://raw.githubusercontent.com/kemely2018/JuegaABC/main/Camera%20Roll/g1.PNG" alt="JuegaABC" class="w-full h-48 object-cover" />
         <div class="p-5 relative">
           <h3 class="text-xl font-semibold mb-1">JuegaABC</h3>
-          <p class="text-sm text-gray-400 mb-4">Juego móvil que enseña el abecedario a través de minijuegos.</p>
+          <p class="text-sm text-gray-400 mb-4">Juego educativo móvil que enseña el abecedario mediante minijuegos interactivos y auditivos.</p>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="bg-yellow-100/20 text-yellow-300 px-2 py-1 rounded">Java</span>
             <span class="bg-yellow-100/20 text-yellow-300 px-2 py-1 rounded">Android XML</span>
           </div>
           <div class="card-overlay absolute inset-0 bg-black/80 flex items-center justify-center text-center opacity-0 -translate-y-4">
-            <p class="text-sm text-gray-200 px-6">App gamificada creada en Android Studio. Implementa sonidos y animaciones para aprendizaje kinestésico.</p>
+            <p class="text-sm text-gray-200 px-6">Desarrollado en Android Studio con animaciones y control de audio para refuerzo multisensorial.</p>
           </div>
         </div>
       </a>
-      <!-- CHUQI‑INKA -->
+      <!-- CHUQI-INKA -->
       <a href="https://github.com/kemely2018/CHUQI-INKA" target="_blank" rel="noopener" class="group block rounded-lg overflow-hidden shadow-lg hover:shadow-2xl bg-gray-800">
         <img src="https://raw.githubusercontent.com/kemely2018/CHUQI-INKA/master/data_readme/ju.gif" alt="CHUQI-INKA" class="w-full h-48 object-cover" />
         <div class="p-5 relative">
-          <h3 class="text-xl font-semibold mb-1">CHUQI‑INKA</h3>
-          <p class="text-sm text-gray-400 mb-4">Puzzle estilo Bejeweled con gemas andinas.</p>
+          <h3 class="text-xl font-semibold mb-1">CHUQI-INKA</h3>
+          <p class="text-sm text-gray-400 mb-4">Puzzle estilo Bejeweled ambientado en iconografía preinca.</p>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="bg-green-100/20 text-green-300 px-2 py-1 rounded">C++</span>
             <span class="bg-green-100/20 text-green-300 px-2 py-1 rounded">SFML</span>
           </div>
           <div class="card-overlay absolute inset-0 bg-black/80 flex items-center justify-center text-center opacity-0 -translate-y-4">
-            <p class="text-sm text-gray-200 px-6">Motor propio con detección de combinaciones y animaciones de cascada.</p>
+            <p class="text-sm text-gray-200 px-6">Motor propio con detección de combinaciones y lógica de cascada para combos consecutivos.</p>
           </div>
         </div>
       </a>
@@ -80,14 +77,14 @@
         <img src="https://raw.githubusercontent.com/Leslym03/ECommerce/master/doc/imgs/rosas.gif" alt="Tienda virtual" class="w-full h-48 object-cover" />
         <div class="p-5 relative">
           <h3 class="text-xl font-semibold mb-1">Tienda virtual</h3>
-          <p class="text-sm text-gray-400 mb-4">E‑commerce "Dulces Detalles" con catálogo y pagos.</p>
+          <p class="text-sm text-gray-400 mb-4">E‑commerce “Dulces Detalles” para la venta de arreglos florales y regalos.</p>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="bg-purple-100/20 text-purple-300 px-2 py-1 rounded">Python</span>
             <span class="bg-purple-100/20 text-purple-300 px-2 py-1 rounded">Django</span>
             <span class="bg-purple-100/20 text-purple-300 px-2 py-1 rounded">JavaScript</span>
           </div>
           <div class="card-overlay absolute inset-0 bg-black/80 flex items-center justify-center text-center opacity-0 -translate-y-4">
-            <p class="text-sm text-gray-200 px-6">Backend robusto con autenticación, panel admin y filtrado por categorías.</p>
+            <p class="text-sm text-gray-200 px-6">Incluye carrito, pasarela de pago y panel administrador para gestión de productos y pedidos.</p>
           </div>
         </div>
       </a>
@@ -96,7 +93,7 @@
         <img src="https://raw.githubusercontent.com/kemely2018/kemely2018.github.io/main/visulaTransporte.gif" alt="Dashboard Transporte" class="w-full h-48 object-cover" />
         <div class="p-5 relative">
           <h3 class="text-xl font-semibold mb-1">Dashboard Transporte</h3>
-          <p class="text-sm text-gray-400 mb-4">Visualiza el dataset <strong>GTFS_SFMTA</strong> con D3: frecuencia, densidad y horarios.</p>
+          <p class="text-sm text-gray-400 mb-4">Visualización interactiva del dataset <strong>GTFS_SFMTA</strong>.</p>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="bg-indigo-100/20 text-indigo-300 px-2 py-1 rounded">JavaScript</span>
             <span class="bg-indigo-100/20 text-indigo-300 px-2 py-1 rounded">D3.js</span>
@@ -104,7 +101,7 @@
             <span class="bg-indigo-100/20 text-indigo-300 px-2 py-1 rounded">GTFS</span>
           </div>
           <div class="card-overlay absolute inset-0 bg-black/80 flex items-center justify-center text-center opacity-0 -translate-y-4">
-            <p class="text-sm text-gray-200 px-6">Incluye mapas de calor y sliders interactivos usando datos de <a href='https://github.com/kemely2021/GTFS_SFMTA' class='underline text-indigo-400' target='_blank' rel='noopener'>GTFS_SFMTA</a>.</p>
+            <p class="text-sm text-gray-200 px-6">Mapas de calor de densidad y sliders de tiempo para explorar horarios y frecuencias.</p>
           </div>
         </div>
       </a>
@@ -112,14 +109,7 @@
   </main>
 
   <!-- ABOUT -->
-  <section id="about" class="max-w-3xl mx-auto px-4 pb-24">
+  <section id="about" class="max-w-3xl mx-auto px-4 pb-20">
     <h2 class="text-3xl font-bold mb-6 glow">Sobre mí</h2>
-    <p class="text-gray-300 leading-relaxed">Soy estudiante de Ciencia de la Computación en la UNSA (Arequipa). Me apasiona combinar datos, diseño y storytelling para crear herramientas que faciliten la toma de decisiones. Fuera del teclado disfruto la fotografía de paisajes y las rutas en bicicleta.</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-8 border-t border-gray-800 text-center text-sm text-gray-500">
-    <p>&copy; 2025 kemely2021 • Hecho con <span aria-label="corazón" class="text-pink-400">❤</span> y Tailwind CSS</p>
-  </footer>
-</body>
-</html>
+    <p class="text-gray-300 leading-relaxed mb-4">Soy alumna de undécimo semestre en la <strong>Universidad Nacional de San Agustín (UNSA)</strong>, Arequipa. Aprendo rápido, disfruto colaborar en equipo y me encanta convertir datos complejos en historias visuales comprensibles.</p>
+    <ul class="text-gray-400 list-disc list-inside space-y
