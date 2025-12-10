@@ -1,4 +1,4 @@
-// script.js - navegación, animaciones, sidebar colapsable y comportamiento
+// script.js - navegación, animaciones, sidebar colapsable, búsqueda y carrusel Proyecto 1
 
 document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
@@ -12,10 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Smooth scrolling handled by CSS `scroll-behavior: smooth` (if supported).
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // close sidebar on mobile when clicking a link
       if (window.innerWidth <= 720) sidebar.classList.remove('open');
 
-      // set active class
       navLinks.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
     });
@@ -48,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let s of sections) {
         if (s.textContent.toLowerCase().includes(q)) {
           s.scrollIntoView({behavior:'smooth', block:'start'});
-          // actualizar nav
           const id = s.id;
           navLinks.forEach(n => n.classList.toggle('active', n.getAttribute('href') === '#' + id));
           break;
@@ -76,11 +73,68 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth > 720) sidebar.classList.remove('open');
   });
 
-  // Mejora: permitir cerrar sidebar tocando fuera (en móvil)
+  // Cerrar sidebar tocando fuera (en móvil)
   document.addEventListener('click', (e) => {
     if (window.innerWidth <= 720 && sidebar.classList.contains('open')) {
       const isClickInside = sidebar.contains(e.target) || (menuToggle && menuToggle.contains(e.target));
       if (!isClickInside) sidebar.classList.remove('open');
     }
   });
+
+  /* =========================================================
+     Carrusel Proyecto 1 - Grammar Quest
+  ========================================================= */
+  const grammarImages = [
+    'assets/grammar.gif',
+    'assets/grammar2.gif'
+  ];
+
+  let currentGrammarIndex = 0;
+  const grammarImg = document.getElementById('grammarImg');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+
+  if (grammarImg && prevBtn && nextBtn) {
+    // Crear indicadores dinámicamente
+    const carouselContainer = grammarImg.parentElement;
+    const indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    grammarImages.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.addEventListener('click', () => {
+        currentGrammarIndex = i;
+        updateGrammarImage();
+      });
+      indicators.appendChild(dot);
+    });
+    carouselContainer.appendChild(indicators);
+
+    function updateIndicators() {
+      indicators.querySelectorAll('span').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentGrammarIndex);
+      });
+    }
+
+    function updateGrammarImage() {
+      grammarImg.style.opacity = 0;
+      setTimeout(() => {
+        grammarImg.src = grammarImages[currentGrammarIndex];
+        grammarImg.style.opacity = 1;
+        updateIndicators();
+      }, 200);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentGrammarIndex = (currentGrammarIndex - 1 + grammarImages.length) % grammarImages.length;
+      updateGrammarImage();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentGrammarIndex = (currentGrammarIndex + 1) % grammarImages.length;
+      updateGrammarImage();
+    });
+
+    // Inicializar indicadores
+    updateIndicators();
+  }
 });
